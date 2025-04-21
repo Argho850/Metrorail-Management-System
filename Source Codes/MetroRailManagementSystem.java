@@ -5,50 +5,49 @@ public class MetroRailManagementSystem {
     private static final String MAIN_ADMIN_NAME = "Argho Saha";
     private static final String MAIN_ADMIN_PASSWORD = "Argho2025";
 
-    // Method to display centered text
+   
     public static void displayCentered(String text) {
         int padding = (80 - text.length()) / 2;
         for (int i = 0; i < padding; i++) System.out.print(" ");
         System.out.println(text);
     }
 
-    // Method to display animated title
+    
     public static void displayTitle() {
-        System.out.println("\033[1;36m"); // Cyan color
+        System.out.println("\033[1;36m"); 
         displayCentered("=====================================================");
         displayCentered("       B A N G L A D E S H   M E T R O R A I L       ");
         displayCentered("=====================================================");
-        System.out.println("\033[0m"); // Reset color
+        System.out.println("\033[0m");
         try {
-            Thread.sleep(1000); // Animation delay
+            Thread.sleep(1000); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
 
-    // Method to display user panel welcome message
+    
     public static void displayUserWelcome() {
-        System.out.println("\033[1;35m"); // Magenta color
+        System.out.println("\033[1;35m"); 
         displayCentered("=======================================================");
         displayCentered("       W E L C O M E   T O   U S E R   P A N E L       ");
         displayCentered("=======================================================");
-        System.out.println("\033[0m"); // Reset color
+        System.out.println("\033[0m"); 
     }
 
-    // Method to display admin panel welcome message
+   
     public static void displayAdminWelcome() {
-        System.out.println("\033[1;34m"); // Blue color
+        System.out.println("\033[1;34m"); 
         displayCentered("=========================================================");
         displayCentered("       W E L C O M E   T O   A D M I N   P A N E L       ");
         displayCentered("=========================================================");
-        System.out.println("\033[0m"); // Reset color
+        System.out.println("\033[0m"); 
     }
 
-    // Method to authenticate main admin
+    
 
 
-    // Method to authenticate main admin
     public static boolean authenticateMainAdmin() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\tEnter main admin name: ");
@@ -59,7 +58,7 @@ public class MetroRailManagementSystem {
         return name.equals(MAIN_ADMIN_NAME) && password.equals(MAIN_ADMIN_PASSWORD);
     }
 
-    // Method to authenticate worker admin
+   
     public static boolean authenticateWorkerAdmin() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\tEnter admin ID: ");
@@ -84,20 +83,20 @@ public class MetroRailManagementSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Display animated title
+        
         displayTitle();
 
         while (true) {
-            // Main menu
+            
             displayCentered("1. Admin Panel");
             displayCentered("2. User Panel");
             displayCentered("3. Exit");
 
             int mainChoice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             if (mainChoice == 1) {
-                // Admin Panel
+              
                 if (!authenticateMainAdmin()) {
                     System.out.println("\tInvalid main admin credentials. Access denied.");
                     continue;
@@ -106,7 +105,6 @@ public class MetroRailManagementSystem {
                 displayAdminWelcome();
                 Admin admin = new Admin();
 
-                // Admin menu
                 while (true) {
                     displayCentered("1. Add Admin");
                     displayCentered("2. Set Train Schedule");
@@ -116,7 +114,7 @@ public class MetroRailManagementSystem {
                     displayCentered("6. Back to Main Menu");
 
                     int adminChoice = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine();
 
                     switch (adminChoice) {
                         case 1:
@@ -162,17 +160,17 @@ public class MetroRailManagementSystem {
                     }
 
                     if (adminChoice == 6) {
-                        break; // Exit admin panel and return to main menu
+                        break; 
                     }
                 }
             } else if (mainChoice == 2) {
-                // User Panel
+                
                 displayUserWelcome();
                 displayCentered("1. Register");
                 displayCentered("2. Log In");
 
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
 
                 if (choice == 1) {
                     displayCentered("Enter username:");
@@ -194,7 +192,7 @@ public class MetroRailManagementSystem {
                         displayCentered("Login successful!");
                         user.displayUserInfo();
 
-                        // User menu
+                        
                         while (true) {
                             displayCentered("1. Buy Ticket");
                             displayCentered("2. Search Train by Route");
@@ -206,7 +204,7 @@ public class MetroRailManagementSystem {
                             displayCentered("8. Back to Main Menu");
 
                             int userChoice = scanner.nextInt();
-                            scanner.nextLine(); // Consume newline
+                            scanner.nextLine(); 
 
                             switch (userChoice) {
                                 case 1:
@@ -252,7 +250,7 @@ public class MetroRailManagementSystem {
                             }
 
                             if (userChoice == 8) {
-                                break; // Exit user panel and return to main menu
+                                break; 
                             }
                         }
                     } else {
@@ -263,7 +261,7 @@ public class MetroRailManagementSystem {
                 }
             } else if (mainChoice == 3) {
                 System.out.println("\tExiting the system...");
-                break; // Exit the program
+                break; 
             } else {
                 System.out.println("\tInvalid choice. Please try again.");
             }
