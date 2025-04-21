@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-// Interface for User Operations
+
 interface UserOperations {
     void buyTicket(String source, String destination);
     void searchTrainByRoute(String route);
@@ -11,3 +11,4 @@ interface UserOperations {
     void submitComplaint(String complaint);
     void checkBalance();
 }
+////All right reserved by Argho...
