@@ -26,7 +26,7 @@ abstract class User {
         this.balance = balance;
     }
 
-    // Abstract method for displaying user info
+    
     public abstract void displayUserInfo();
 }
-
+////All right reserved by Argho...
