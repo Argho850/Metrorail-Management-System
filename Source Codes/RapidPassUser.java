@@ -1,6 +1,5 @@
 import java.io.* ;
 
-// Concrete User Class
 class RapidPassUser extends User implements UserOperations {
     private static final String USER_DATA_FILE = "user_data.txt";
     private static final String TRAIN_SCHEDULE_FILE = "train_schedule.txt";
@@ -12,7 +11,7 @@ class RapidPassUser extends User implements UserOperations {
         super(username, password);
     }
 
-    // Overriding abstract method
+  
     @Override
     public void displayUserInfo() {
         System.out.println("\tUsername: " + getUsername());
@@ -175,3 +174,4 @@ class RapidPassUser extends User implements UserOperations {
         return null;
     }
 }
+////All right reserved by Argho...
